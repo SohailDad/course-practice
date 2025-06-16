@@ -59,7 +59,7 @@ h1,h2{
     margin-right: 20px;
 }
 
-.skill-section, .project-section {
+.skill-section, .project-section, .Recomendation-section {
     padding: 0px 50px 0px 50px;
     
 
@@ -91,11 +91,26 @@ h1,h2{
     height: 50px;
 }
 
-.project-list li{
+.project-list li, .parah-box{
     margin-left: 40px;
     
 }
 
 hr{
     width: 80%;
+}
+
+.parah-box{
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 20px;
+
+
+}
+
+.parah-box p{
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
 }
