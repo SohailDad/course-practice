@@ -104,13 +104,32 @@ hr{
     display: flex;
     flex-wrap: wrap;  
     gap: 20px;
-
+    margin-bottom: 50px;
 
 }
 
 .parah-box p{
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 20px;
     border-radius: 10px;
-    width: 20%;
+    width: 300px;
+}
+
+
+.recommendation-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* width: 50%; */
+}
+
+.input-field {
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea{
+    height: 100px;
 }
