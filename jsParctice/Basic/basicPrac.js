@@ -37,3 +37,19 @@ function calculateArea(){
 }
 
 
+// follower counter App
+function displayFollower(){
+    if (count == 10) {
+        alert("Congradulation! You achieved 10 Followers.")
+    }else {
+        document.getElementById("followerMsg").innerHTML = "Congradulation! You achieved Followers."
+    }
+}
+
+let count = 0
+function incrementFollower(){
+    count++;
+    document.getElementById("count").innerHTML = count;
+    displayFollower();
+}
+
