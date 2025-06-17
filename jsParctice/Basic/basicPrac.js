@@ -24,3 +24,16 @@ const p = document.createElement("p");
 // p.className = "demo1";                        
 p.innerHTML = authenticationStatus;           
 document.body.appendChild(p);   
+
+
+
+// CalculateArea function
+function calculateArea(){
+    let height = parseFloat(document.getElementById("Height").value)
+    let width = parseFloat(document.getElementById("Width").value)
+    console.log("Result : ",height,width)
+    document.getElementById("areaResult").innerHTML =`Total Area :  ${height * width}`;
+    
+}
+
+
