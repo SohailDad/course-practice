@@ -124,6 +124,12 @@ hr{
     /* width: 50%; */
 }
 
+.recommendation-H3{
+    /* text-align: end;   */
+    margin-left: 60px; 
+    margin-right: 100px;
+}
+
 .input-field {
     width: 50%;
     border: 1px solid #ccc;
@@ -132,4 +138,13 @@ hr{
 
 textarea{
     height: 100px;
+}
+
+.submit-button{
+    padding: 5px 40px 5px 40px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    font-size: 20px;
+    color: rgb(55, 55, 214);
+    
 }
