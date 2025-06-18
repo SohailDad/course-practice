@@ -70,6 +70,21 @@ function displayEmployees(){
 }
 
 function calculateTotalSalaries(){
-    totalSalaries = employees.reduce((total,employee)=> total + employee.salary,0)
+    const totalSalaries = employees.reduce((total,employee)=> total + employee.salary,0)
     alert(`Total Salaries : $${totalSalaries}`)
+}
+
+function displayHREmployees(){
+    const hrEmployees = employees.filter((employee)=> employee.department === "HR")
+    const hrEmployeesDisplay = hrEmployees.map((employee)=> `<p>${employee.id}: ${employee.name} : ${employee.age} : ${employee.department} : ${employee.salary}</p>`);
+    document.getElementById("employeesDetails").innerHTML = hrEmployeesDisplay
+}
+
+function findEmployeeById(employeeId){
+    const foundEmployee = employees.find((employee)=>employee.id === employeeId)
+    if(foundEmployee){
+        document.getElementById("employeesDetails").innerHTML = `<p>${foundEmployee.id}: ${foundEmployee.name} : ${foundEmployee.age} : ${foundEmployee.department} : ${foundEmployee.salary}</p>`
+    }else{
+        document.getElementById("employeesDetails").innerHTML = `<p>Employee Not Found!!!</p>`
+    }
 }
