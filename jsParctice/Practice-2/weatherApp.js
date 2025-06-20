@@ -13,7 +13,7 @@ async function  weatherData(){
     .catch((error)=>console.error("Error : ",error))
 
 
-    console.log("City Name: ",textInput)
+    // console.log("City Name: ",textInput)
 }
 
 function displayData(data){
