@@ -20,7 +20,20 @@ function App() {
     setTasks(newTasks)
   }
 
- 
+  const updateTask = () => {
+    const updatedTasks = [...tasks];
+    updatedTasks[editIndex] = textInput;
+    setTasks(updatedTasks)
+    setEditIndex(null)
+    
+    settextInput('')
+  }
+
+
+  const editTask = (index) => {
+    setEditIndex(index)
+    settextInput(tasks[index]);
+  }
   return (
     <>
       <div>
