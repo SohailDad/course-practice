@@ -4,7 +4,7 @@ import { useState } from 'react'
 function App() {
   const [textInput, settextInput] = useState('')
   const [tasks, setTasks] = useState([])
-  
+  const [editIndex, setEditIndex] = useState(null)
 
   const addTask = () => {
     if (textInput.trim() !== '') {
@@ -27,7 +27,26 @@ function App() {
           <button onClick={updateTask}>Update</button>
         )}
 
-        
+        <div>
+          {
+            tasks.map((task, index) => (
+              <>
+
+                <table border={2}>
+                  <tr>
+                    <td key={index} className='text-td'>{task}</td>
+                    <td>
+                      <button onClick={() => deleteTask(index)}>Delete</button>
+                    </td>
+                    <td>
+                      <button onClick={() => editTask(index)}>Edit</button>
+                    </td>
+                  </tr>
+                </table>
+              </>
+            ))
+          }
+        </div>
       </div>
     </>
   )
