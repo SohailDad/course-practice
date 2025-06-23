@@ -34,6 +34,8 @@ function App() {
     setEditIndex(index)
     settextInput(tasks[index]);
   }
+
+  
   return (
     <>
       <div>
