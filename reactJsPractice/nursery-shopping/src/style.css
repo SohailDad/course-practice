@@ -1,0 +1,25 @@
+.back-image {
+    background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+
+/* background-position: center;
+    width: 100%;
+     */
+
+.welcome-hr {
+    width: 200px;
+    /* Increase this value for a wider line */
+    height: 10px;
+    font-weight: bold;
+    background-color: green;
+    /* Optional: set color */
+
+}
