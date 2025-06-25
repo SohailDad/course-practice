@@ -1,24 +1,27 @@
 
+
 function WelcomePage() {
     return (
-        <div className="back-image ">
-            <div class="container text-center">
+        <>
+
+            <div className="back-image"></div>
+            <div class="container-fluid text-center position-absolute top-50 start-50 translate-middle">
 
                 <div class="row ">
-                    <div class="col-4 align-items-center justify-content-center d-flex flex-column">
-                        <h1>
+                    <div class="col-md-4  align-items-center justify-content-center d-flex flex-column ">
+                        <h1 className="text-white ">
                             Welcome To <br />
                             Paradise Nursery
                         </h1>
                         {/* <hr className="welcome-hr "/> */}
-                        <p className="fs-5">
+                        <p className="fs-5 text-white">
                             Where Green Meets Serenity
                         </p>
                         <button class="btn btn-success btn-lg">
                             Get Started
                         </button>
                     </div>
-                    <div class="col-8 fs-5 text-start text-white">
+                    <div class="col-md-8 fs-5  text-white text-start p-5 mt-5">
 
                         <p> Welcome to Paradise Nursery, where green meets serenity!</p>
                         <p>At Paradise Nursery, we are passionate about bringing nature closer to you. Our mission is to provide a wide range of high-quality plants that not only enhance the beauty of your surroundings but also contribute to a healthier and more sustainable lifestyle. From air-purifying plants to aromatic fragrant ones, we have something for every plant enthusiast.</p>
@@ -29,7 +32,7 @@ function WelcomePage() {
                 </div>
 
             </div>
-        </div>
+        </>
     )
 }
 

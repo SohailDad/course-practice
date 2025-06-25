@@ -1,11 +1,16 @@
+import Cards from "./components/Cards"
+import Navbar from "./components/Navbar"
+import ShoppingCards from "./components/ShoppingCards"
 import WelcomePage from "./components/WelcomePage"
-import './style.css'
+import "./welcomeStyle.css"
 function App() {
 
   return (
     <>
-      
-      <WelcomePage/>
+      <Navbar/>
+      <ShoppingCards />
+      {/* <Cards/> */}
+      {/* <WelcomePage/> */}
     </>
   )
 }
