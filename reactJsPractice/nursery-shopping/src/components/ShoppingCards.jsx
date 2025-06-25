@@ -1,7 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function ShoppingCards() {
     return (
+    <>
+        <Navbar/>
         <div className='container mt-3 d-flex align-items-center flex-column '>
             <h1 className='mb-4 '>Total Cards Amount : $15</h1>
             <div className="card  mb-1" style={{ maxWidth: "540px", }}>
@@ -53,6 +56,8 @@ function ShoppingCards() {
                 <button className='btn btn-success mb-2 '>CheckOut</button>
             </div>
         </div>
+        </>
+    
     )
 }
 

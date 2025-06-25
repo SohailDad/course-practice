@@ -1,8 +1,11 @@
 import Cards from "./components/Cards"
+import MainPage from "./components/MainPage"
 import Navbar from "./components/Navbar"
 import ShoppingCards from "./components/ShoppingCards"
 import WelcomePage from "./components/WelcomePage"
 import "./welcomeStyle.css"
+import { Routes, Route, Link } from 'react-router-dom';
+
 function App() {
 
   return (
@@ -10,7 +13,13 @@ function App() {
       {/* <Navbar/>
       <ShoppingCards /> */}
       {/* <Cards/> */}
-      <WelcomePage/>
+      {/* <WelcomePage /> */}
+
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/mainpage" element={<MainPage/>} />
+        <Route path="/shoppingCards" element={<ShoppingCards />} />
+      </Routes>
     </>
   )
 }

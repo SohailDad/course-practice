@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 function WelcomePage() {
@@ -18,7 +19,9 @@ function WelcomePage() {
                             Where Green Meets Serenity
                         </p>
                         <button class="btn btn-success btn-lg">
+                            <Link to={"/mainpage"} className="text-decoration-none text-white">
                             Get Started
+                            </Link>
                         </button>
                     </div>
                     <div class="col-md-8 fs-5  text-white text-start p-5 mt-5">
