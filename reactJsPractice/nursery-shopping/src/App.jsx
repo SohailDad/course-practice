@@ -7,10 +7,10 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-      <ShoppingCards />
+      {/* <Navbar/>
+      <ShoppingCards /> */}
       {/* <Cards/> */}
-      {/* <WelcomePage/> */}
+      <WelcomePage/>
     </>
   )
 }
