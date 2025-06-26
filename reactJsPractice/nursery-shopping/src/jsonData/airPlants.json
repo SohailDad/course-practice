@@ -1,15 +1,62 @@
-export const airPlants = [
+[
   {
     "name": "Tillandsia",
     "price": "$15",
-    "description": "Produce oxygen at night, improving air quality.",
-    "image": "https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740"
+    "description": "Produces oxygen at night, improving air quality.",
+    "image": "https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg"
   },
   {
-    "name": "",
-    "price": "$15",
-    "description": "Produce oxygen at night, improving air quality.",
-    "image": "https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740"
+    "name": "Xerographica",
+    "price": "$22",
+    "description": "Known for its large rosette shape and drought resistance.",
+    "image": "https://img.freepik.com/free-photo/green-plant-pot-white-background_53876-133907.jpg"
   },
-
+  {
+    "name": "Ionantha",
+    "price": "$10",
+    "description": "Compact and colorful, turns red when about to bloom.",
+    "image": "https://img.freepik.com/free-photo/plant-pot-minimal-style_53876-133899.jpg"
+  },
+  {
+    "name": "Caput Medusae",
+    "price": "$18",
+    "description": ""name"d after Medusa due to its wild, curling leaves.",
+    "image": "https://img.freepik.com/free-photo/houseplant-pot-with-green-leaves_53876-133911.jpg"
+  },
+  {
+    "name": "Bulbosa",
+    "price": "$14",
+    "description": "Unique bulbous base and thin, curving leaves.",
+    "image": "https://img.freepik.com/free-photo/decorative-houseplant-pot_53876-133905.jpg"
+  },
+  {
+    "name": "Stricta",
+    "price": "$13",
+    "description": "Easy to care for, blooms with bright pink flowers.",
+    "image": "https://img.freepik.com/free-photo/green-plant-table-modern-interior_53876-133914.jpg"
+  },
+  {
+    "name": "Fasciculata",
+    "price": "$20",
+    "description": "Sturdy and reliable air plant with bright blooms.",
+    "image": "https://img.freepik.com/free-photo/potted-houseplant-natural-background_53876-133909.jpg"
+  },
+  {
+    "name": "Tectorum",
+    "price": "$19",
+    "description": "Covered in fuzzy trichomes, giving it a silvery look.",
+    "image": "https://img.freepik.com/free-photo/houseplant-table-bright-room_53876-133910.jpg"
+  },
+  {
+    "name": "Juncea",
+    "price": "$12",
+    "description": "Tall, grassy look with thin leaves and easy care.",
+    "image": "https://img.freepik.com/free-photo/plant-pot-isolated-white-background_53876-133896.jpg"
+  },
+  {
+    "name": "Abdita",
+    "price": "$11",
+    "description": "Beautiful rosette shape, can turn red in bright light.",
+    "image": "https://img.freepik.com/free-photo/minimal-green-plant-pot_53876-133901.jpg"
+  }
 ];
