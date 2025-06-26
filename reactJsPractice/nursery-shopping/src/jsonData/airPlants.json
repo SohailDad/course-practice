@@ -1,0 +1,15 @@
+export const airPlants = [
+  {
+    "name": "Tillandsia",
+    "price": "$15",
+    "description": "Produce oxygen at night, improving air quality.",
+    "image": "https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740"
+  },
+  {
+    "name": "",
+    "price": "$15",
+    "description": "Produce oxygen at night, improving air quality.",
+    "image": "https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740"
+  },
+
+];
