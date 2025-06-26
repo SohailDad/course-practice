@@ -5,7 +5,7 @@ import Cards from './Cards';
 function Navbar() {
     return (
         
-        <nav class="navbar bg-success navbar-expand-lg" data-bs-theme="dark" >
+        <nav className="navbar bg-success navbar-expand-lg" data-bs-theme="dark" >
             <div className="container">
                 <Link to={"/mainpage"} className="navbar-brand" href="#">
                     <img src="https://i.ibb.co/2t1x5bH/logo.png" alt="logo" width="60" height="50" className=" m-2 rounded" />
@@ -24,9 +24,9 @@ function Navbar() {
                     </ul>
 
                     
-                    <Link to={"/shoppingCards"} class="border-0 position-relative">
+                    <Link to={"/shoppingCards"} className="border-0 position-relative">
                         <img src={cart} alt="logo" className="d-inline-block align-text-top me-2" width="50" height="50" />
-                        <span class="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-light text-dark">
+                        <span className="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-light text-dark">
                             99+
                             {/* <span class="visually-hidden">unread messages</span> */}
                         </span>

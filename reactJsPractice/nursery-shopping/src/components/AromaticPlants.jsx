@@ -19,8 +19,8 @@ function AromaticPlants() {
                                     <h5>Price : $15</h5>
                                 </div>
                                 <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
+                                <div className="d-grid">
+                                    <button className="btn btn-success" type="button">Add To Card</button>
                                 </div>
                             </div>
                         </div>
@@ -34,8 +34,8 @@ function AromaticPlants() {
                                     <h5>Price : $15</h5>
                                 </div>
                                 <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
+                                <div className="d-grid">
+                                    <button className="btn btn-success" type="button">Add To Card</button>
                                 </div>
                             </div>
                         </div>
@@ -49,8 +49,8 @@ function AromaticPlants() {
                                     <h5>Price : $15</h5>
                                 </div>
                                 <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
+                                <div className="d-grid">
+                                    <button className="btn btn-success" type="button">Add To Card</button>
                                 </div>
                             </div>
                         </div>
@@ -64,8 +64,8 @@ function AromaticPlants() {
                                     <h5>Price : $15</h5>
                                 </div>
                                 <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
+                                <div className="d-grid">
+                                    <button className="btn btn-success" type="button">Add To Card</button>
                                 </div>
                             </div>
                         </div>

@@ -1,79 +1,46 @@
-import React from 'react'
+import { useEffect } from "react"
+import airPlants from "../jsonData/airPlants.json"
 
 function AirPlants() {
-  return (
-    <div>
 
-        <h1 className='text-center mt-3'>
+
+    return (
+        <div>
+
+            <h1 className='text-center mt-3'>
                 Air Purifying Plants
             </h1>
             <div className='mt-5'>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
-                    <div className="col">
-                        <div className="card text-center">
-                            <img src="https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740" className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <div className='d-flex'>
-                                    <h5 className=" me-auto">Snake Plant</h5>
-                                    <h5>Price : $15</h5>
-                                </div>
-                                <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card text-center">
-                            <img src="https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740" className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <div className='d-flex'>
-                                    <h5 className=" me-auto">Snake Plant</h5>
-                                    <h5>Price : $15</h5>
-                                </div>
-                                <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
+                    {
+                        airPlants.map((plants) => (
+
+                            <div className="col" >
+                                <div className="card text-center">
+                                    <img src={plants.image} className="card-img-top" width="200" height="250" alt="..." />
+                                    <div className="card-body">
+                                        <div className='d-flex'>
+                                            <h5 className=" me-auto">{plants.name}</h5>
+                                            <h5>Price : {plants.price}</h5>
+                                        </div>
+                                        <p className="card-text">{plants.description}</p>
+                                        <div class="d-grid">
+                                            <button class="btn btn-success" type="button">Add To Card</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card text-center">
-                            <img src="https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740" className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <div className='d-flex'>
-                                    <h5 className=" me-auto">Snake Plant</h5>
-                                    <h5>Price : $15</h5>
-                                </div>
-                                <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card text-center">
-                            <img src="https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022108.jpg?ga=GA1.1.1767132769.1750844106&semt=ais_hybrid&w=740" className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <div className='d-flex'>
-                                    <h5 className=" me-auto">Snake Plant</h5>
-                                    <h5>Price : $15</h5>
-                                </div>
-                                <p className="card-text">Produce oxygen at night, improving air quality.</p>
-                                <div class="d-grid">
-                                    <button class="btn btn-success" type="button">Add To Card</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+                        ))
+                    }
+
+
                 </div>
             </div>
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default AirPlants

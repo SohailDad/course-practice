@@ -8,50 +8,50 @@
   {
     "name": "Xerographica",
     "price": "$22",
-    "description": "Known for its large rosette shape and drought resistance.",
-    "image": "https://img.freepik.com/free-photo/green-plant-pot-white-background_53876-133907.jpg"
+    "description": "Known for its large rosette shape resistance.",
+    "image": "https://www.air-plants.com/cdn/shop/products/concolorbloom.jpg?v=1672258791&width=1080"
   },
   {
     "name": "Ionantha",
     "price": "$10",
-    "description": "Compact and colorful, turns red when about to bloom.",
-    "image": "https://img.freepik.com/free-photo/plant-pot-minimal-style_53876-133899.jpg"
+    "description": "Compact and colorful,turns red when about to bloom.",
+    "image": "https://www.epicgardening.com/wp-content/uploads/2023/03/A-close-up-shot-of-clusters-of-hanging-air-plants-called-Tillandsia-ionantha.jpg"
   },
   {
     "name": "Caput Medusae",
     "price": "$18",
-    "description": ""name"d after Medusa due to its wild, curling leaves.",
-    "image": "https://img.freepik.com/free-photo/houseplant-pot-with-green-leaves_53876-133911.jpg"
+    "description": "named after Medusa due to its wild, curling leaves.",
+    "image": "https://cdn.shopify.com/s/files/1/2217/7265/files/Tillandsia_Air_Plant_Xerographica-19.jpg?v=1626820670"
   },
   {
     "name": "Bulbosa",
     "price": "$14",
     "description": "Unique bulbous base and thin, curving leaves.",
-    "image": "https://img.freepik.com/free-photo/decorative-houseplant-pot_53876-133905.jpg"
+    "image": "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/1598/20465/tillandsia_gh_10__29759.1727117353.jpg?c=3"
   },
   {
     "name": "Stricta",
     "price": "$13",
     "description": "Easy to care for, blooms with bright pink flowers.",
-    "image": "https://img.freepik.com/free-photo/green-plant-table-modern-interior_53876-133914.jpg"
+    "image": "https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1705631463044-CO3SPJ0ZY653ZG76Z0V3/Ttillandsia-flower.jpg"
   },
   {
     "name": "Fasciculata",
     "price": "$20",
     "description": "Sturdy and reliable air plant with bright blooms.",
-    "image": "https://img.freepik.com/free-photo/potted-houseplant-natural-background_53876-133909.jpg"
+    "image": "https://images.squarespace-cdn.com/content/v1/544591e6e4b0135285aeb5b6/1518381857526-GXZRUCTNNG65WA82ZOPJ/image-asset.jpeg"
   },
   {
     "name": "Tectorum",
     "price": "$19",
     "description": "Covered in fuzzy trichomes, giving it a silvery look.",
-    "image": "https://img.freepik.com/free-photo/houseplant-table-bright-room_53876-133910.jpg"
+    "image": "https://airplantsupplyco.com/cdn/shop/articles/Stricta_Air_Plants.jpg?v=1557248513"
   },
   {
     "name": "Juncea",
     "price": "$12",
     "description": "Tall, grassy look with thin leaves and easy care.",
-    "image": "https://img.freepik.com/free-photo/plant-pot-isolated-white-background_53876-133896.jpg"
+    "image": "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/1598/20465/tillandsia_gh_10__29759.1727117353.jpg?c=3"
   },
   {
     "name": "Abdita",
@@ -59,4 +59,4 @@
     "description": "Beautiful rosette shape, can turn red in bright light.",
     "image": "https://img.freepik.com/free-photo/minimal-green-plant-pot_53876-133901.jpg"
   }
-];
+]
