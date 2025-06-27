@@ -3,6 +3,8 @@ import cart from '../assets/cart-shopping-solid.svg';
 import Cards from './Cards';
 
 function Navbar() {
+
+    
     return (
         
         <nav className="navbar bg-success navbar-expand-lg" data-bs-theme="dark" >
