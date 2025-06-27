@@ -1,54 +1,53 @@
-import { useState } from "react"
-import airPlants from "../jsonData/airPlants.json"
+import { useState } from "react";
+import airPlants from "../jsonData/airPlants.json";
 
 function AirPlants() {
-    const [ifBtn,setIfBtn] = useState(true)
+    
+    const [disabledButtons, setDisabledButtons] = useState([]);
 
-    const addCardBtn = ()=>{
-        setIfBtn(false)
-    }
+    const addCardBtn = (index) => {
+        setDisabledButtons((prev) => [...prev, index]);
+    };
 
     return (
         <div>
-
-            <h1 className='text-center mt-3'>
-                Air Purifying Plants
-            </h1>
+            <h1 className='text-center mt-3'>Air Purifying Plants</h1>
             <div className='mt-5'>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
-                    {
-                        airPlants.map((plants,index) => (
-
-                            <div className="col" key={index}>
-                                <div className="card text-center">
-                                    <img src={plants.image} className="card-img-top" width="200" height="250" alt="..." />
-                                    <div className="card-body">
-                                        <div className='d-flex'>
-                                            <h5 className=" me-auto">{plants.name}</h5>
-                                            <h5>Price : {plants.price}</h5>
-                                        </div>
-                                        <p className="card-text">{plants.description}</p>
-                                        <div className="d-grid">
-                                            <button className="btn btn-success" type="button" 
-                                            disabled={!ifBtn} 
-                                            onClick={addCardBtn} >
-                                                Add To Card
-                                            </button>
-                                        </div>
+                    {airPlants.map((plants, index) => (
+                        <div className="col" key={index}>
+                            <div className="card text-center">
+                                <img
+                                    src={plants.image}
+                                    className="card-img-top"
+                                    width="200"
+                                    height="250"
+                                    alt="..."
+                                />
+                                <div className="card-body">
+                                    <div className='d-flex'>
+                                        <h5 className="me-auto">{plants.name}</h5>
+                                        <h5>Price: {plants.price}</h5>
+                                    </div>
+                                    <p className="card-text">{plants.description}</p>
+                                    <div className="d-grid">
+                                        <button
+                                            className="btn btn-success"
+                                            type="button"
+                                            disabled={disabledButtons.includes(index)}
+                                            onClick={() => addCardBtn(index)}
+                                        >
+                                            Add To Cart
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-
-
-                        ))
-                    }
-
-
+                        </div>
+                    ))}
                 </div>
             </div>
-
         </div>
-    )
+    );
 }
 
-export default AirPlants
+export default AirPlants;
