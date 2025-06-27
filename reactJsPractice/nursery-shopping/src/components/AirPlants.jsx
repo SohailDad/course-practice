@@ -4,9 +4,11 @@ import airPlants from "../jsonData/airPlants.json";
 function AirPlants() {
     
     const [disabledButtons, setDisabledButtons] = useState([]);
+    const [count, setCount] = useState(0)
 
     const addCardBtn = (index) => {
         setDisabledButtons((prev) => [...prev, index]);
+        setCount(count+1)
     };
 
     return (
@@ -26,7 +28,7 @@ function AirPlants() {
                                 />
                                 <div className="card-body">
                                     <div className='d-flex'>
-                                        <h5 className="me-auto">{plants.name}</h5>
+                                        <h5 className="me-auto">{plants.name}{count}</h5>
                                         <h5>Price: {plants.price}</h5>
                                     </div>
                                     <p className="card-text">{plants.description}</p>
