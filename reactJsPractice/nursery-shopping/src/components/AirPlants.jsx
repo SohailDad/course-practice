@@ -1,6 +1,6 @@
 import { useState } from "react";
 import airPlants from "../jsonData/airPlants.json";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { cardIndex, increment, totalCardAmount } from '../counterSlice'
 
 function AirPlants() {
@@ -8,8 +8,8 @@ function AirPlants() {
     
     const dispatch = useDispatch()
     
-    const [disabledButtons, setDisabledButtons] = useState([]);
-   
+    const indexCard = useSelector((state)=>state.counter.index)
+    const [disabledButtons, setDisabledButtons] = useState(indexCard);
 
     const addCardBtn = (index) => {
         // console.log("Index : ",index)
