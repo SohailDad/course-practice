@@ -24,6 +24,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, totalCardAmount } = counterSlice.actions
+export const { increment, totalCardAmount, cardIndex } = counterSlice.actions
 
 export default counterSlice.reducer

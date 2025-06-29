@@ -1,7 +1,7 @@
 import { useState } from "react";
 import airPlants from "../jsonData/airPlants.json";
 import { useDispatch } from 'react-redux'
-import { increment, totalCardAmount } from '../counterSlice'
+import { cardIndex, increment, totalCardAmount } from '../counterSlice'
 
 function AirPlants() {
 
