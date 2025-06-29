@@ -15,6 +15,7 @@ function AirPlants() {
         setDisabledButtons((prev) => [...prev, index]);
         dispatch(increment())
         dispatch(totalCardAmount(Number(airPlants[index].price)))
+        dispatch(cardIndex(index))
     };
 
     return (
@@ -23,8 +24,8 @@ function AirPlants() {
             <h1 className='text-center mt-3'>Air Purifying Plants</h1>
             <div className='mt-5'>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
-                    {airPlants.map((plants, index) => (
-                        <div className="col" key={index}>
+                    {airPlants.map((plants) => (
+                        <div className="col" key={plants.id}>
                             <div className="card text-center">
                                 <img
                                     src={plants.image}
@@ -43,8 +44,8 @@ function AirPlants() {
                                         <button
                                             className="btn btn-success"
                                             type="button"
-                                            disabled={disabledButtons.includes(index)}
-                                            onClick={() => addCardBtn(index)}
+                                            disabled={disabledButtons.includes(plants.id)}
+                                            onClick={() => addCardBtn(plants.id)}
                                         >
                                             Add To Cart
                                         </button>

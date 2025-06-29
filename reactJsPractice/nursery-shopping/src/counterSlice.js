@@ -4,7 +4,8 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
     value: 0,
-    total: 0
+    total: 0,
+    index: []
   },
   reducers: {
     increment: state => {
@@ -13,7 +14,12 @@ export const counterSlice = createSlice({
     },
     totalCardAmount: (state, action) => {
       state.total += action.payload
+    },
+
+    cardIndex: (state, action)=>{
+        state.index.push(action.payload)
     }
+
   }
 })
 
