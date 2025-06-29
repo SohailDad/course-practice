@@ -18,6 +18,10 @@ export const counterSlice = createSlice({
 
     cardIndex: (state, action)=>{
         state.index.push(action.payload)
+    },
+
+    cardDelete: (state,action)=>{
+        state.index.splice(1,action.payload)
     }
 
   }

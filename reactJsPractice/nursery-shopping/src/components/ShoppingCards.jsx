@@ -1,16 +1,20 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import plants from "../jsonData/airPlants.json"
 
 function ShoppingCards() {
     const total = useSelector((state) => state.counter.total)
     const indexCard = useSelector((state) => state.counter.index)
+    const dispatch = useDispatch()
+    const deleteCard = (index)=>{
+        
+    }
     return (
         <>
             <Navbar />
             <div className='container mt-3 d-flex align-items-center flex-column '>
-                <h1 className='mb-4 '>Total Cards Amount : {total}</h1>
+                <h1 className='mb-4 '>Total Cards Amount : ${total}</h1>
                 {
                     indexCard.map((i) => {
                         const plant = plants[i-1];
@@ -30,7 +34,11 @@ function ShoppingCards() {
                                                 <button className=' border'>+</button>
                                             </div>
                                             <p className='fs-6'><b>Total : $15</b></p>
-                                            <button className='btn btn-sm btn-danger'>Delete</button>
+                                            <button className='btn btn-sm btn-danger'
+                                                onClick={deleteCard(plant.id)}
+                                            >
+                                                Delete
+                                            </button>
                                         </div>
                                     </div>
 
