@@ -12,6 +12,7 @@ function AirPlants() {
    
 
     const addCardBtn = (index) => {
+        // console.log("Index : ",index)
         setDisabledButtons((prev) => [...prev, index]);
         dispatch(increment())
         dispatch(totalCardAmount(Number(airPlants[index].price)))
@@ -44,7 +45,7 @@ function AirPlants() {
                                         <button
                                             className="btn btn-success"
                                             type="button"
-                                            disabled={disabledButtons.includes(plants.id)}
+                                            disabled={disabledButtons.includes(plants.id)} // true or false
                                             onClick={() => addCardBtn(plants.id)}
                                         >
                                             Add To Cart

@@ -6,7 +6,6 @@ import plants from "../jsonData/airPlants.json"
 function ShoppingCards() {
     const total = useSelector((state) => state.counter.total)
     const indexCard = useSelector((state) => state.counter.index)
-    console.log("Total data: ", plants[indexCard])
     return (
         <>
             <Navbar />
@@ -14,7 +13,7 @@ function ShoppingCards() {
                 <h1 className='mb-4 '>Total Cards Amount : {total}</h1>
                 {
                     indexCard.map((i) => {
-                        const plant = plants[i];
+                        const plant = plants[i-1];
                         return (
                             <div className="card  mb-1" style={{ maxWidth: "540px", }} key={plant.id}>
                                 <div className="row g-0">
@@ -43,7 +42,7 @@ function ShoppingCards() {
                 }
 
 
-                <div class="d-grid">
+                <div className="d-grid">
                     <button className='btn btn-success mb-2 mt-4'>Continue Shopping</button>
                     <button className='btn btn-success mb-2 '>CheckOut</button>
                 </div>
