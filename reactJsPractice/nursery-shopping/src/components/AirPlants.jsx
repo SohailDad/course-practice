@@ -1,14 +1,20 @@
 import { useState } from "react";
 import airPlants from "../jsonData/airPlants.json";
-import Navbar from "./Navbar";
+import { useDispatch } from 'react-redux'
+import { increment, totalCardAmount } from '../counterSlice'
 
 function AirPlants() {
+
+    
+    const dispatch = useDispatch()
     
     const [disabledButtons, setDisabledButtons] = useState([]);
    
 
     const addCardBtn = (index) => {
         setDisabledButtons((prev) => [...prev, index]);
+        dispatch(increment())
+        dispatch(totalCardAmount(Number(airPlants[index].price)))
     };
 
     return (

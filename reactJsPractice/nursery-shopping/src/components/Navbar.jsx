@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import cart from '../assets/cart-shopping-solid.svg';
-import Cards from './Cards';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
 
+    const count = useSelector(state => state.counter.value)
     
     return (
         
@@ -29,7 +30,7 @@ function Navbar() {
                     <Link to={"/shoppingCards"} className="border-0 position-relative">
                         <img src={cart} alt="logo" className="d-inline-block align-text-top me-2" width="50" height="50" />
                         <span className="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-light text-dark">
-                            99+
+                            {count}
                             {/* <span class="visually-hidden">unread messages</span> */}
                         </span>
                     </Link>

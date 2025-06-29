@@ -1,12 +1,16 @@
 import React from 'react'
 import Navbar from './Navbar'
+import { useSelector } from 'react-redux'
 
 function ShoppingCards() {
+
+    const total = useSelector((state)=>state.counter.total)
+
     return (
     <>
         <Navbar/>
         <div className='container mt-3 d-flex align-items-center flex-column '>
-            <h1 className='mb-4 '>Total Cards Amount : $15</h1>
+            <h1 className='mb-4 '>Total Cards Amount : {total}</h1>
             <div className="card  mb-1" style={{ maxWidth: "540px", }}>
                 <div className="row g-0">
                     <div className="col-5">
