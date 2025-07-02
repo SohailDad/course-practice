@@ -12,6 +12,14 @@ function ShoppingCards() {
         dispatch(cardDelete(index))
         dispatch(decrementTotalCardAmount(price))
     }
+
+    const incrementBtn = ()=>{
+        
+    }
+    const decrementBtn = ()=>{
+
+    }
+
     return (
         <>
             <Navbar />
@@ -31,9 +39,19 @@ function ShoppingCards() {
                                             <h5 className="card-title">{plant.name}</h5>
                                             <p className='fs-6'>Price : ${plant.price}</p>
                                             <div className='mb-2'>
-                                                <button className='px-2 border'>-</button>
-                                                <span className='px-3'>1</span>
-                                                <button className=' border'>+</button>
+                                                <button className='px-2 border' 
+                                                    onClick={()=>decrementBtn()}
+                                                >
+                                                    -
+                                                    
+                                                </button>
+                                                <span className='px-3' >1</span>
+                                                <button className=' border'
+                                                    onClick={()=>incrementBtn(plant.price)}
+                                                >
+                                                    +
+                                                    
+                                                </button>
                                             </div>
                                             <p className='fs-6'><b>Total : $15</b></p>
                                             <button className='btn btn-sm btn-danger'

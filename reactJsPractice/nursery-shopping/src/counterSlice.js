@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { act } from 'react'
 
 export const counterSlice = createSlice({
     name: 'counter',
     initialState: {
         value: 0,
         total: 0,
+        cardT:0,
         index: []
     },
     reducers: {
@@ -26,12 +28,15 @@ export const counterSlice = createSlice({
 
         decrementTotalCardAmount: (state,action)=>{
             state.total -= action.payload
+        },
+        cardTotal : (state, action)=>{
+            state.cardT += action.payload
         }
 
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, totalCardAmount, cardIndex, cardDelete, decrementTotalCardAmount } = counterSlice.actions
+export const { increment, totalCardAmount, cardIndex, cardDelete, decrementTotalCardAmount,cardTotal } = counterSlice.actions
 
 export default counterSlice.reducer
