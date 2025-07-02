@@ -8,9 +8,9 @@ function ShoppingCards() {
     const total = useSelector((state) => state.counter.total)
     const indexCard = useSelector((state) => state.counter.index)
     const dispatch = useDispatch()
-    const deleteCard = (index)=>{
+    const deleteCard = (index,price)=>{
         dispatch(cardDelete(index))
-        dispatch(decrementTotalCardAmount())
+        dispatch(decrementTotalCardAmount(price))
     }
     return (
         <>
@@ -37,7 +37,7 @@ function ShoppingCards() {
                                             </div>
                                             <p className='fs-6'><b>Total : $15</b></p>
                                             <button className='btn btn-sm btn-danger'
-                                                onClick={()=>deleteCard(plant.id) }
+                                                onClick={()=>deleteCard(plant.id,plant.price) }
                                             >
                                                 Delete
                                             </button>

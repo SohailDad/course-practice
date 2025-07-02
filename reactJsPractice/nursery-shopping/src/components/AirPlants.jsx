@@ -12,10 +12,10 @@ function AirPlants() {
     const [disabledButtons, setDisabledButtons] = useState(indexCard);
 
     const addCardBtn = (index) => {
-        // console.log("Index : ",index)
+        console.log("Index : ",index)
         setDisabledButtons((prev) => [...prev, index]);
         dispatch(increment())
-        dispatch(totalCardAmount(Number(airPlants[index].price)))
+        dispatch(totalCardAmount(Number(airPlants[index-1].price)))
         dispatch(cardIndex(index))
     };
 
