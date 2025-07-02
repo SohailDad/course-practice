@@ -2,22 +2,25 @@ import React from 'react'
 import Navbar from './Navbar'
 import { useDispatch, useSelector } from 'react-redux'
 import plants from "../jsonData/airPlants.json"
-import { cardDelete, decrementTotalCardAmount } from '../counterSlice'
+import { cardDelete, cardTotal, cardTotalDecrement, decrementTotalCardAmount } from '../counterSlice'
 
 function ShoppingCards() {
     const total = useSelector((state) => state.counter.total)
     const indexCard = useSelector((state) => state.counter.index)
+    const totalCard = useSelector((state)=>state.counter.cardT)
+
+
     const dispatch = useDispatch()
     const deleteCard = (index,price)=>{
         dispatch(cardDelete(index))
         dispatch(decrementTotalCardAmount(price))
     }
 
-    const incrementBtn = ()=>{
-        
+    const incrementBtn = (price)=>{
+        dispatch(cardTotal(price))
     }
-    const decrementBtn = ()=>{
-
+    const decrementBtn = (price)=>{
+        dispatch(cardTotalDecrement(price))
     }
 
     return (
@@ -40,7 +43,7 @@ function ShoppingCards() {
                                             <p className='fs-6'>Price : ${plant.price}</p>
                                             <div className='mb-2'>
                                                 <button className='px-2 border' 
-                                                    onClick={()=>decrementBtn()}
+                                                    onClick={()=>decrementBtn(plant.price)}
                                                 >
                                                     -
                                                     
@@ -53,7 +56,7 @@ function ShoppingCards() {
                                                     
                                                 </button>
                                             </div>
-                                            <p className='fs-6'><b>Total : $15</b></p>
+                                            <p className='fs-6'><b>Total : ${totalCard}</b></p>
                                             <button className='btn btn-sm btn-danger'
                                                 onClick={()=>deleteCard(plant.id,plant.price) }
                                             >

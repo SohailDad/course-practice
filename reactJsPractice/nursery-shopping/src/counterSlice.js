@@ -31,12 +31,17 @@ export const counterSlice = createSlice({
         },
         cardTotal : (state, action)=>{
             state.cardT += action.payload
+        },
+        cardTotalDecrement: (state, action)=>{
+            if (state.cardT !== 0){
+            state.cardT -= action.payload
+            }
         }
 
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, totalCardAmount, cardIndex, cardDelete, decrementTotalCardAmount,cardTotal } = counterSlice.actions
+export const { increment, totalCardAmount, cardIndex, cardDelete, decrementTotalCardAmount,cardTotal, cardTotalDecrement } = counterSlice.actions
 
 export default counterSlice.reducer
