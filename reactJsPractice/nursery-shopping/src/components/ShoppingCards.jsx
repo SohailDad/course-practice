@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import { useDispatch, useSelector } from 'react-redux'
 import plants from "../jsonData/airPlants.json"
-import { cardDelete } from '../counterSlice'
+import { cardDelete, decrementTotalCardAmount } from '../counterSlice'
 
 function ShoppingCards() {
     const total = useSelector((state) => state.counter.total)
@@ -10,6 +10,7 @@ function ShoppingCards() {
     const dispatch = useDispatch()
     const deleteCard = (index)=>{
         dispatch(cardDelete(index))
+        dispatch(decrementTotalCardAmount())
     }
     return (
         <>
@@ -36,7 +37,7 @@ function ShoppingCards() {
                                             </div>
                                             <p className='fs-6'><b>Total : $15</b></p>
                                             <button className='btn btn-sm btn-danger'
-                                                onClick={()=>deleteCard(plant.id)}
+                                                onClick={()=>deleteCard(plant.id) }
                                             >
                                                 Delete
                                             </button>
