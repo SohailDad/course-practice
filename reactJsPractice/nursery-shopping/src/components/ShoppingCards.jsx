@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import { useDispatch, useSelector } from 'react-redux'
 import plants from "../jsonData/airPlants.json"
-import { cardDelete, cardTotal, cardTotalDecrement, decrementTotalCardAmount } from '../counterSlice'
+import { cardDelete, cardTotal, cardTotalDecrement, decrementTotalCardAmount, totalCardAmount } from '../counterSlice'
 
 function ShoppingCards() {
     const total = useSelector((state) => state.counter.total)
@@ -17,9 +17,12 @@ function ShoppingCards() {
     }
 
     const incrementBtn = (price)=>{
+        dispatch(totalCardAmount(price))
         dispatch(cardTotal(price))
     }
+
     const decrementBtn = (price)=>{
+        dispatch(decrementTotalCardAmount(price))
         dispatch(cardTotalDecrement(price))
     }
 
@@ -56,7 +59,7 @@ function ShoppingCards() {
                                                     
                                                 </button>
                                             </div>
-                                            <p className='fs-6'><b>Total : ${totalCard}</b></p>
+                                            <p className='fs-6'><b>Total : ${totalCard === 0 ? plant.price : totalCard}</b></p>
                                             <button className='btn btn-sm btn-danger'
                                                 onClick={()=>deleteCard(plant.id,plant.price) }
                                             >
