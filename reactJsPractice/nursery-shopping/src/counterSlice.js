@@ -57,7 +57,7 @@ export const counterSlice = createSlice({
     value: 0,
     total: 0,
     index: [],
-    quantities: {},   // { [id]: quantity }
+    quantities: {},   
   },
   reducers: {
     increment: state => {
@@ -75,7 +75,7 @@ export const counterSlice = createSlice({
     },
     cardDelete: (state, action) => {
       const id = action.payload.id;
-      const qty = state.quantities[id] || 0;
+      const qty = state.quantities[id];
       const plantPrice = action.payload.price ;
 
     //   console.log("plantPrice : ",plantPrice)

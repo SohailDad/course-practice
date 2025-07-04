@@ -89,7 +89,7 @@
 // export default ShoppingCards
 
 
-import React from 'react';
+
 import Navbar from './Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import plants from "../jsonData/airPlants.json";
