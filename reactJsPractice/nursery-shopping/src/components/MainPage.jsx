@@ -6,7 +6,7 @@ function MainPage() {
   return (
     <div>
         <Navbar/>
-        <Cards/>
+        <AirPlants/>
     </div>
   )
 }
