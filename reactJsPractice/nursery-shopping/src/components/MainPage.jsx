@@ -1,6 +1,5 @@
-import React from 'react'
+import AirPlants from './AirPlants'
 import Navbar from './Navbar'
-import Cards from './Cards'
 
 function MainPage() {
   return (

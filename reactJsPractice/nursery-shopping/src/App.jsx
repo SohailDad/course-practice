@@ -1,6 +1,4 @@
-import Cards from "./components/Cards"
 import MainPage from "./components/MainPage"
-import Navbar from "./components/Navbar"
 import ShoppingCards from "./components/ShoppingCards"
 import WelcomePage from "./components/WelcomePage"
 import "./welcomeStyle.css"
