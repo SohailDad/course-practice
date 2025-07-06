@@ -21,7 +21,7 @@ function AirPlants() {
     };
 
     return (
-        <div>
+        <div className="container mb-5">
             
             <h1 className='text-center mt-3'>Air Purifying Plants</h1>
             <div className='mt-5'>
