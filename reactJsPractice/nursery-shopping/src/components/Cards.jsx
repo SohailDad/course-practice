@@ -6,7 +6,7 @@ function Cards() {
     return (
         <div className='container mb-5'>
             <AirPlants/>
-            <AromaticPlants/>
+            {/* <AromaticPlants/> */}
         </div>
     )
 }
