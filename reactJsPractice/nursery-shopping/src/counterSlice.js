@@ -27,7 +27,7 @@ export const counterSlice = createSlice({
       const qty = state.quantities[id];
       const plantPrice = action.payload.price ;
 
-    //   console.log("plantPrice : ",plantPrice)
+      // console.log("plantPrice : ",plantPrice)  // for testing
     //     console.log("id: ",id)
     //     console.log("Total: ",state.total)
 
