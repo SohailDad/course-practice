@@ -9,7 +9,7 @@ function WelcomePage() {
             <div className="container-fluid text-center position-absolute top-50 start-50 translate-middle">
 
                 <div className="row ">
-                    <div className="col-md-4  align-items-center justify-content-center d-flex flex-column ">
+                    <div className="col-md-4 mt-md-0 mt-5 align-items-center justify-content-center d-flex flex-column ">
                         <h1 className="text-white ">
                             Welcome To <br />
                             Paradise Nursery
