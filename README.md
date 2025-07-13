@@ -1,9 +1,9 @@
 ## A simple Nursery Shopping Project in React
 
-### directory:
+### Directory:
 <coed>\reactJsPractice\nursery-shopping></code>
 
-### Installational
+### Installation
 * download the project and run below commmands
 <code>npm install</code>
 * Start the App <code>npm run dev</code>
