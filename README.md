@@ -1,7 +1,7 @@
 ## A simple Nursery Shopping Project in React
 
 ### Directory:
-<coed>\reactJsPractice\nursery-shopping></code>
+<code>\reactJsPractice\nursery-shopping></code>
 
 ### Installation
 * download the project and run below commmands
