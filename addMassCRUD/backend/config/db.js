@@ -1,6 +1,5 @@
 const mysql = require("mysql");
 
-
 try {
     const connectDB = mysql.createConnection({
         host: "127.0.0.1",
@@ -19,3 +18,4 @@ try {
 } catch (error) {
     console.log("DB Error :", error)
 }
+
