@@ -39,8 +39,6 @@ const insertItems = async (req, res) => {
         console.log("Server Error: ", error);
         res.status(500).json({ message: "Sever Error!!" })
     }
-
-
 }
 const updateItems = async (req, res) => {
     try {
