@@ -43,9 +43,23 @@ const insertItems = async(req,res)=>{
 }
 const updateItems = async(req,res)=>{
     try {
-        
+        const updateItems = req.body
+        const {id} = req.params;
+        // console.log("put operation : ",id,updateItems) //for testing
+        if (!updateItems || !id) {
+            return res.status(400).json({message:"Fill all feilds!!"})
+        }
+        const dbQuery = `update items_table set title="${updateItems.title}", status = "${updateItems.status}", description = "${updateItems.description}" where id = "${id}"`
+        connDB.query(dbQuery,(err,result)=>{
+            if(err) return console.log("Query Error:",err)
+
+            res.status(200).json({message:"Update successfully!!",data: result})
+
+        })
+
     } catch (error) {
-        
+        console.log("Server Error: ",error);
+        res.status(500).json({message:"Sever Error!!"})
     }
 
 }
