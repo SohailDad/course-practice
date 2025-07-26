@@ -1,4 +1,5 @@
 import AddItems from "./components/addItems"
+import Table from "./components/Table"
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
         {/* Add Items button */}
         <AddItems/>
         {/* Table */}
+        <Table/>
       </div>
     </>
   )
