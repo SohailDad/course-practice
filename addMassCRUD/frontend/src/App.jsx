@@ -1,3 +1,4 @@
+import AddItems from "./components/addItems"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
       </div>
       <div>
         {/* Add Items button */}
+        <AddItems/>
         {/* Table */}
       </div>
     </>
