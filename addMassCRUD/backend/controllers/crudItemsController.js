@@ -20,7 +20,11 @@ const getItems = async(req,res)=>{
 const insertItems = async(req,res)=>{
     try {
         const itemsData = req.body
-        console.log("items Data : ",itemsData)
+        if(!itemsData.title || !itemsData.status || !itemsData.description)
+        {
+            return res.status(400).json({message:"fill all fields !!"})
+        }
+        // console.log("items Data : ",itemsData) //for testing 
         const dbQuery = `insert into items_table (title, status, description) values ("${itemsData.title}","${itemsData.status}","${itemsData.description}")`
 
         connDB.query(dbQuery,(err,result)=>{
@@ -38,6 +42,11 @@ const insertItems = async(req,res)=>{
 
 }
 const updateItems = async(req,res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
 
 }
 const deleteItems = async(req,res)=>{
