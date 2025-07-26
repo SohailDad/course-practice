@@ -6,7 +6,7 @@ const routes = express.Router();
 routes.get("/",getItems);
 routes.post("/",insertItems);
 routes.put("/:id",updateItems);
-routes.delete("/",deleteItems);
+routes.delete("/:id",deleteItems);
 
 
 module.exports = routes;
