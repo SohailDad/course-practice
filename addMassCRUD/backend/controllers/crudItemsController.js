@@ -28,7 +28,7 @@ const insertItems = async (req, res) => {
         // console.log("items Data : ",itemsData) //for testing 
         const dbQuery = `insert into items_table (title, status, description) values ("${itemsData.title}","${itemsData.status}","${itemsData.description}")`
 
-        connDB.query(dbQuery, (err, result) => {
+        await connDB.query(dbQuery, (err, result) => {
             if (err) return console.log("Query Error: ", err)
 
             res.status(200).json({ message: "Insert Successfully!!" })
@@ -51,7 +51,7 @@ const updateItems = async (req, res) => {
             return res.status(400).json({ message: "Fill all feilds!!" })
         }
         const dbQuery = `update items_table set title="${updateItems.title}", status = "${updateItems.status}", description = "${updateItems.description}" where id = "${id}"`
-        connDB.query(dbQuery, (err, result) => {
+        await connDB.query(dbQuery, (err, result) => {
             if (err) return console.log("Query Error:", err)
 
             res.status(200).json({ message: "Update successfully!!", data: result })
@@ -74,7 +74,7 @@ const deleteItems = async (req, res) => {
 
         const dbQuery = `delete from items_table where id = "${id}"`
 
-        connDB.query(dbQuery, (err, result) => {
+        await connDB.query(dbQuery, (err, result) => {
             if (err) {
                 return console.log("Query Error: ", err)
             }
