@@ -1,11 +1,14 @@
 import axios from "axios"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 
 function AddItems() {
-
+    const [deleteToast, setDeleteToast] = useState(false)
+    
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
@@ -14,6 +17,8 @@ function AddItems() {
         try {
             await axios.post("http://localhost:3000/crudItems",data)
 
+            reset()
+            setDeleteToast(true)
         } catch (error) {
             
         }
@@ -23,6 +28,19 @@ function AddItems() {
 
 
     return (
+        <>
+        {
+                deleteToast ?
+                <div class="toast align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Successfully Add Item.
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+                : ""
+                }
         <div className="py-4 d-flex justify-content-center">
             <button type="button" className="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Items +</button>
             <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,8 +68,8 @@ function AddItems() {
                                     {errors.title && <span className="text-danger ">This field is required</span>}
                                 </div>
                                 <div className="modal-footer">
-                                    {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                                    <button type="submit" className="btn btn-primary px-4">Add</button>
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" className="btn btn-primary px-4" >Add</button>
                                 </div>
                             </form>
                         </div>
@@ -59,6 +77,8 @@ function AddItems() {
                 </div>
             </div>
         </div>
+                </>
+
     )
 }
 
