@@ -4,13 +4,13 @@ import axios from "axios"
 function Table() {
     const [items, setItems] = useState([])
     const [deleteToast, setDeleteToast] = useState(false)
-    console.log("items Data : ", items)
+    // console.log("items Data : ", items)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get("http://localhost:3000/crudItems");
-                console.log("Data :", response.data.data)// for testing
+                // console.log("Data :", response.data.data)// for testing
                 setItems(...items, response.data.data)
             } catch (error) {
                 console.log("Fetching Data Error!", error);

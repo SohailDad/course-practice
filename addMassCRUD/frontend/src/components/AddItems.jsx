@@ -1,5 +1,27 @@
+import axios from "axios"
+import { useForm } from "react-hook-form"
 
 function AddItems() {
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
+
+    const onSubmit = async(data) => {
+        console.log("form data: ",data)
+        try {
+            await axios.post("http://localhost:3000/crudItems",data)
+
+        } catch (error) {
+            
+        }
+
+    }
+
+
+
     return (
         <div className="py-4 d-flex justify-content-center">
             <button type="button" className="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Items +</button>
@@ -11,24 +33,27 @@ function AddItems() {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form>
+                            <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="mb-3">
                                     <label for="recipient-name" className="col-form-label text-start">Title</label>
-                                    <input type="text" className="form-control" id="recipient-name" placeholder="Enter Title"/>
+                                    <input {...register("title", { required: true })} type="text" className="form-control" id="recipient-name" placeholder="Enter Title" />
+                                    {errors.title && <span className="text-danger ">This field is required</span>}
                                 </div>
                                 <div className="mb-3">
                                     <label for="recipient-name" className="col-form-label text-start">Status</label>
-                                    <input type="number" className="form-control" id="recipient-name" min={0} max={1} placeholder="0-1"/>
+                                    <input type="number" {...register("status", { required: true, minLength: 0, maxLength: 1 })} className="form-control" id="recipient-name" placeholder="0-1" />
+                                    {errors.status && <span className="text-danger ">This field is required only 0 or 1.</span>}
                                 </div>
                                 <div className="mb-3">
                                     <label for="message-text" className="col-form-label">Description</label>
-                                    <textarea className="form-control h-4" id="message-text" placeholder="Write description..."></textarea>
+                                    <textarea {...register("description", { required: true })} className="form-control h-4" id="message-text" placeholder="Write description..."></textarea>
+                                    {errors.title && <span className="text-danger ">This field is required</span>}
+                                </div>
+                                <div className="modal-footer">
+                                    {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                                    <button type="submit" className="btn btn-primary px-4">Add</button>
                                 </div>
                             </form>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary px-4">Add</button>
                         </div>
                     </div>
                 </div>
