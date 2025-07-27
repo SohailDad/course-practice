@@ -2,16 +2,29 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 
 function Table() {
-    const [items,setItems] = useState([])
+    const [items, setItems] = useState([])
+    console.log("items Data : ", items)
 
     useEffect(() => {
-        
-        const data = axios.get("http://localhost:3000/")
-        console.log("Data: ",data);
-    
-      
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("http://localhost:3000/crudItems");
+                console.log("Data :", response.data.data)// for testing
+                setItems(...items, response.data.data)
+            } catch (error) {
+                console.error("Fetching Data Error!", error);
+            }
+        };
+
+        fetchData();
+
     }, [])
-    
+
+
+    const deleteItems = ()=>{
+        
+    }
+
 
     return (
         <div className='d-flex justify-content-center items-center container'>
@@ -25,41 +38,22 @@ function Table() {
                     </tr>
                 </thead>
                 <tbody>
+                    {items.map((item,index) => (
+                
+                        <tr key={index}>
+                            <td>{item.title}</td>
+                            <td>{item.status}</td>
+                            <td>{item.description}</td>
+                            <td>
+                                <div className='d-md-flex justify-content-center '>
+                                    <button className='btn btn-danger mx-md-2' onClick={deleteItems}>Delete</button>
+                                    <button className='btn btn-primary'>Edit</button>
+                                </div>
+                            </td>
 
-                    <tr >
-                        <td>Mark kdh qwh o oqwhd sohail dldqsd </td>
-                        <td>1</td>
-                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae itaque dolorum quidem quo explicabo sapiente voluptas facilis inventore sint? Ab iste doloribus placeat facilis amet id, repellat enim dolorum nobis?</td>
-                         <td>
-                            <div className='d-md-flex justify-content-center '>
-                                <button className='btn btn-danger mx-md-2'>Delete</button>
-                                <button className='btn btn-primary'>Edit</button>
-                            </div>
-                        </td>
-
-                    </tr>
-                    {/* <tr>
-                        <td>Jacob</td>
-                        <td>0</td>
-                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis odit vero, suscipit excepturi sunt ipsa laudantium dolorem, debitis eius aliquam officia quibusdam iste dignissimos quasi nemo. Quibusdam odio sit dolor.</td>
-                        <td>
-                            <div className='d-flex justify-content-center '>
-                                <button className='btn btn-danger mx-2'>Delete</button>
-                                <button className='btn btn-primary'>Edit</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>1</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nobis earum doloribus explicabo nam illo, harum nihil, ab assumenda facere quo? Quos molestiae vitae veniam fuga saepe, consequatur exercitationem eos.</td>
-                        <td>
-                            <div className='d-flex justify-content-center '>
-                                <button className='btn btn-danger mx-2'>Delete</button>
-                                <button className='btn btn-primary'>Edit</button>
-                            </div>
-                        </td>
-                    </tr> */}
+                        </tr>
+                    ))}
+                    
                 </tbody>
             </table>
         </div>
