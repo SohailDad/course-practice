@@ -8,7 +8,7 @@ const getItems = async (req, res) => {
             if (err) {
                 return console.log("Query error: ", err)
             }
-            console.log("Result: ", result)
+            // console.log("Result: ", result)// for testing
             if (result.length > 0) {
                 return res.status(200).json({ message: "found all Items!", data: result })
             }
