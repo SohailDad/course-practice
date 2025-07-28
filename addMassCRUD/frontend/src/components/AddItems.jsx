@@ -67,7 +67,7 @@ function AddItems() {
                     <div className="toast align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
                         <div className="d-flex">
                             <div className="toast-body">
-                                {editItems ? "Item updated successfully!" : "Item added successfully!"}
+                                Successfully!
                             </div>
                             <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
@@ -83,7 +83,11 @@ function AddItems() {
                                 <h1 className="modal-title fs-5" id="exampleModalLabel">Add New Items</h1>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"
                                     onClick={() => {
-                                        reset();
+                                        reset({
+                                            title: '',
+                                            status: null,
+                                            description: ""
+                                        });
                                         setEditItems(false);
                                         setEditItemsData(null);
                                     }}
@@ -107,14 +111,18 @@ function AddItems() {
                                         {errors.description && <span className="text-danger ">This field is required</span>}
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        {
-                                            editItems ? (
-                                                <button type="submit" className="btn btn-primary px-4" >Update</button>
-                                            ) : (
-                                                <button type="submit" className="btn btn-primary px-4">Add</button>
-                                            )
-                                        }
+                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
+                                        reset({
+                                            title: '',
+                                            status: null,
+                                            description: ""
+                                        });
+                                        setEditItems(false);
+                                        setEditItemsData(null);
+                                    }}>Close</button>
+                                        <button type="submit" className="btn btn-primary px-4" >
+                                            {editItems ? "Update" : "Add"}
+                                        </button>
                                     </div>
                                 </form>
                             </div>
