@@ -5,6 +5,8 @@ const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
     const [items, setItems] = useState([]);
+    const [editItems, setEditItems] = useState(false)
+    const [editItemsData, setEditItemsData] = useState()
 
     const fetchData = async () => {
         try {
@@ -15,12 +17,14 @@ export const DataProvider = ({ children }) => {
         }
     };
 
+    
+
     useEffect(() => {
         fetchData();
     }, []);
 
     return (
-        <DataContext.Provider value={{ items, fetchData }}>
+        <DataContext.Provider value={{ items, editItems, fetchData }}>
             {children}
         </DataContext.Provider>
     );

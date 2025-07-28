@@ -5,7 +5,7 @@ import { useData } from "../context/DataContext";
 
 function AddItems() {
     const [submitToast, setSubmitToast] = useState(false)
-    const { fetchData } = useData();
+    const { fetchData, editItems } = useData();
     const {
         register,
         handleSubmit,
@@ -73,7 +73,12 @@ function AddItems() {
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" className="btn btn-primary px-4" >Add</button>
+                                        <button type="submit" className="btn btn-primary px-4" >
+                                            {
+                                                editItems ? "Update" : "Add"
+                                            }
+                                            
+                                        </button>
                                     </div>
                                 </form>
                             </div>

@@ -5,10 +5,16 @@ import { useData } from "../context/DataContext";
 function Table() {
     const [deleteToast, setDeleteToast] = useState(false)
     // console.log("items Data : ", items)
-    const { items, fetchData } = useData();
+    const { items, fetchData, setEditItems } = useData();
 
 
-    
+const editItems = async(id)=>{
+    try {
+        setEditItems(true);
+    } catch (error) {
+        console.log("Edit Data Error")
+    }
+}    
 
 
     const deleteItems = async (id) => {
@@ -63,7 +69,7 @@ function Table() {
                                 <td>
                                     <div className='d-md-flex justify-content-center '>
                                         <button className='btn btn-danger mx-md-2' onClick={() => deleteItems(item.id)}>Delete</button>
-                                        <button className='btn btn-primary'>Edit</button>
+                                        <button className='btn btn-primary' onClick={() => editItems(item.id)}>Edit</button>
                                     </div>
                                 </td>
 
