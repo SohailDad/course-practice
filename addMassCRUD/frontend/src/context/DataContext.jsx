@@ -6,7 +6,7 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
     const [items, setItems] = useState([]);
     const [editItems, setEditItems] = useState(false)
-    const [editItemsData, setEditItemsData] = useState()
+    const [editItemsData, setEditItemsData] = useState([])
 
     const fetchData = async () => {
         try {
@@ -24,7 +24,7 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     return (
-        <DataContext.Provider value={{ items, editItems, fetchData }}>
+        <DataContext.Provider value={{ items, editItems, editItemsData , setEditItems, setEditItemsData,fetchData }}>
             {children}
         </DataContext.Provider>
     );

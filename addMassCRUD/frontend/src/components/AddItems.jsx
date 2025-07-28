@@ -1,11 +1,11 @@
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useData } from "../context/DataContext";
 
 function AddItems() {
     const [submitToast, setSubmitToast] = useState(false)
-    const { fetchData, editItems } = useData();
+    const { fetchData, editItems, setEditItems, setEditItemsData, editItemsData } = useData();
     const {
         register,
         handleSubmit,
@@ -13,21 +13,50 @@ function AddItems() {
         formState: { errors },
     } = useForm()
 
+    useEffect(() => {
+        if (editItems && editItemsData) {
+            reset({
+                title: editItemsData.title,
+                status: editItemsData.status,
+                description: editItemsData.description
+            });
+        }
+    }, [editItems, editItemsData]);
+    const update = () => {
+        reset({
+            title: '',
+            status: null,
+            description: ""
+        })
+        setEditItems(false)
+    }
 
     const onSubmit = async (data) => {
-        console.log("form data: ", data)
+        console.log("form data: ", data);
         try {
-            await axios.post("http://localhost:3000/crudItems", data)
+            if (editItems) {
+                await axios.put(`http://localhost:3000/crudItems/${editItemsData.id}`, data);
+                reset({
+                    title: '',
+                    status: null,
+                    description: ""
+                })
+            } else {
+                await axios.post("http://localhost:3000/crudItems", data);
+            }
 
-            reset()
-            fetchData()
-            setSubmitToast(true)
+            reset();
+            fetchData();
+            setSubmitToast(true);
             setTimeout(() => setSubmitToast(false), 3000);
-        } catch (error) {
-            console.log("Inerting Items Error", error)
-        }
 
-    }
+            setEditItems(false);
+            setEditItemsData(null);
+        } catch (error) {
+            console.log("Inserting/Updating Items Error", error);
+        }
+    };
+
 
 
 
@@ -38,7 +67,7 @@ function AddItems() {
                     <div className="toast align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
                         <div className="d-flex">
                             <div className="toast-body">
-                                Successfully Add Item.
+                                {editItems ? "Item updated successfully!" : "Item added successfully!"}
                             </div>
                             <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
@@ -52,7 +81,13 @@ function AddItems() {
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h1 className="modal-title fs-5" id="exampleModalLabel">Add New Items</h1>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    onClick={() => {
+                                        reset();
+                                        setEditItems(false);
+                                        setEditItemsData(null);
+                                    }}
+                                ></button>
                             </div>
                             <div className="modal-body">
                                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,12 +108,13 @@ function AddItems() {
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" className="btn btn-primary px-4" >
-                                            {
-                                                editItems ? "Update" : "Add"
-                                            }
-                                            
-                                        </button>
+                                        {
+                                            editItems ? (
+                                                <button type="submit" className="btn btn-primary px-4" >Update</button>
+                                            ) : (
+                                                <button type="submit" className="btn btn-primary px-4">Add</button>
+                                            )
+                                        }
                                     </div>
                                 </form>
                             </div>
