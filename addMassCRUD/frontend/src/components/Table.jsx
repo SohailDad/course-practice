@@ -4,8 +4,10 @@ import { useData } from "../context/DataContext";
 
 function Table() {
     const [deleteToast, setDeleteToast] = useState(false)
+    const [catchError, setCatchError] = useState("")
+
     // console.log("items Data : ", items)
-    const { items, fetchData, setEditItems, setEditItemsData } = useData();
+    const { items, fetchData, setEditItems, setEditItemsData} = useData();
 
 
     const editItems = async (itemsData) => {
@@ -14,6 +16,8 @@ function Table() {
             setEditItemsData(itemsData)
         } catch (error) {
             console.log("Edit Data Error")
+            setCatchError("Edit Data Error plz wait..!")
+            setTimeout(() => setCatchError(""), 3000);
         }
     }
 
@@ -29,6 +33,8 @@ function Table() {
             }
         } catch (error) {
             console.log("Deleting Data Error")
+            setCatchError("Edit Data Error plz wait..!")
+            setTimeout(() => setCatchError(""), 3000);
         }
     }
 
@@ -38,15 +44,27 @@ function Table() {
     return (
         <>{
             deleteToast ?
-                <div class="toast align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            Successfully items delete.
+                    <div className="toast container align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="d-flex">
+                            <div className="toast-body">
+                                Successfully!
+                            </div>
+                            <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
-                </div>
-                : ""
+                    : ""
+        }
+        {
+            catchError ?
+                    <div className="toast container align-items-center text-bg-danger border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="d-flex">
+                            <div className="toast-body">
+                                {catchError}
+                            </div>
+                            <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    : ""
         }
 
             <div className='d-flex justify-content-center items-center container'>

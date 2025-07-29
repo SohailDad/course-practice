@@ -14,6 +14,7 @@ export const DataProvider = ({ children }) => {
             setItems(response.data.data);
         } catch (error) {
             console.error("Fetching Data Error!", error);
+            setCatchError("Items Not found!")
         }
     };
 
@@ -24,7 +25,7 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     return (
-        <DataContext.Provider value={{ items, editItems, editItemsData , setEditItems, setEditItemsData,fetchData }}>
+        <DataContext.Provider value={{ items, editItems, editItemsData, setEditItems, setEditItemsData, fetchData }}>
             {children}
         </DataContext.Provider>
     );

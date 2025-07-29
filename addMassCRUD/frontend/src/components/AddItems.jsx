@@ -3,9 +3,13 @@ import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useData } from "../context/DataContext";
 
+
+
 function AddItems() {
     const [submitToast, setSubmitToast] = useState(false)
-    const { fetchData, editItems, setEditItems, setEditItemsData, editItemsData } = useData();
+    const [catchError, setCatchError] = useState("")
+
+    const { fetchData, editItems, setEditItems, setEditItemsData, editItemsData} = useData();
     const {
         register,
         handleSubmit,
@@ -22,14 +26,9 @@ function AddItems() {
             });
         }
     }, [editItems, editItemsData]);
-    const update = () => {
-        reset({
-            title: '',
-            status: null,
-            description: ""
-        })
-        setEditItems(false)
-    }
+    
+
+    
 
     const onSubmit = async (data) => {
         console.log("form data: ", data);
@@ -47,6 +46,9 @@ function AddItems() {
 
             reset();
             fetchData();
+           
+            document.querySelector('#exampleModal .btn-close')?.click();
+
             setSubmitToast(true);
             setTimeout(() => setSubmitToast(false), 3000);
 
@@ -54,6 +56,9 @@ function AddItems() {
             setEditItemsData(null);
         } catch (error) {
             console.log("Inserting/Updating Items Error", error);
+            document.querySelector('#exampleModal .btn-close')?.click();
+            setCatchError("Inserting/Updating Items Error So plz wait...!")
+            setTimeout(() => setCatchError(""), 3000);
         }
     };
 
@@ -63,11 +68,26 @@ function AddItems() {
     return (
         <>
             {
-                submitToast ?
+
+                submitToast?
                     <div className="toast container align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
                         <div className="d-flex">
                             <div className="toast-body">
                                 Successfully!
+                            </div>
+                            <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    : ""
+
+              
+            }
+            {
+                  catchError?
+                    <div className="toast container align-items-center text-bg-danger border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="d-flex">
+                            <div className="toast-body">
+                                {catchError}
                             </div>
                             <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
@@ -102,11 +122,11 @@ function AddItems() {
                                     </div>
                                     <div className="mb-3">
                                         <label className="col-form-label text-start">Status</label>
-                                        <select>
-                                            <option>Active</option>
-                                            <option>In-active</option>
+                                        <select className="form-select" aria-label="Default select example" {...register("status", { required: true })} >
+                                            <option value="1">Active</option>
+                                            <option value="0">In-Active</option>
                                         </select>
-                                        {errors.status && <span className="text-danger ">This field is required only 0 or 1.</span>}
+                                        {errors.status && <span className="text-danger ">This field is required</span>}
                                     </div>
                                     <div className="mb-3">
                                         <label className="col-form-label">Description</label>
@@ -115,14 +135,14 @@ function AddItems() {
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
-                                        reset({
-                                            title: '',
-                                            status: null,
-                                            description: ""
-                                        });
-                                        setEditItems(false);
-                                        setEditItemsData(null);
-                                    }}>Close</button>
+                                            reset({
+                                                title: '',
+                                                status: null,
+                                                description: ""
+                                            });
+                                            setEditItems(false);
+                                            setEditItemsData(null);
+                                        }}>Close</button>
                                         <button type="submit" className="btn btn-primary px-4" >
                                             {editItems ? "Update" : "Add"}
                                         </button>
