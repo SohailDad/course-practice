@@ -64,7 +64,7 @@ function AddItems() {
         <>
             {
                 submitToast ?
-                    <div className="toast align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div className="toast container align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
                         <div className="d-flex">
                             <div className="toast-body">
                                 Successfully!
@@ -74,7 +74,7 @@ function AddItems() {
                     </div>
                     : ""
             }
-            <div className="py-4 d-flex justify-content-center">
+            <div className=" container p-4 d-flex justify-content-end">
                 <button type="button" className="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Items +</button>
                 <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
@@ -102,7 +102,10 @@ function AddItems() {
                                     </div>
                                     <div className="mb-3">
                                         <label className="col-form-label text-start">Status</label>
-                                        <input type="number" {...register("status", { required: true, min: 0, max: 1 })} className="form-control" id="recipient-name" placeholder="0-1" />
+                                        <select>
+                                            <option>Active</option>
+                                            <option>In-active</option>
+                                        </select>
                                         {errors.status && <span className="text-danger ">This field is required only 0 or 1.</span>}
                                     </div>
                                     <div className="mb-3">
